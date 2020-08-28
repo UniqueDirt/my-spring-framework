@@ -1,6 +1,8 @@
 package com.henry.stu.factory;
 
 import com.henry.stu.extend.MyXmlBeanFactory;
+import com.henry.stu.pojo.Car;
+import com.henry.stu.pojo.CarFactoryBean;
 import com.henry.stu.pojo.MyTestBean;
 import org.junit.Assert;
 import org.junit.Test;
@@ -54,8 +56,18 @@ public class BeanFactoryTest {
   public void MySimpleLoad() {
     BeanFactory beanFactory = new MyXmlBeanFactory(new ClassPathResource("spring-bean-config.xml"));
     MyTestBean bean = (MyTestBean) beanFactory.getBean("myTestBean");
-    System.out.println("bean content: " + bean.getName());
+    System.out.println("name: " + bean.getName() + "; nickname: " + bean.getNickname());
     Assert.assertEquals("Hello bean", bean.getName());
+  }
+
+  @Test
+  public void MyCarBean() throws Exception {
+    BeanFactory beanFactory = new MyXmlBeanFactory(new ClassPathResource("spring-bean-config.xml"));
+    Car car = (Car) beanFactory.getBean("car");
+    CarFactoryBean carFactoryBean  = (CarFactoryBean) beanFactory.getBean("&car");
+    System.out.println(car.toString());
+    System.out.println(carFactoryBean.toString());
+    System.out.println(carFactoryBean.getObject());
   }
 
 }

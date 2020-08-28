@@ -4,6 +4,8 @@ import org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader
 import org.w3c.dom.Element;
 
 /**
+ * 织入类
+ *
  * @author heyong
  * @date 2020/8/26 14:14
  */

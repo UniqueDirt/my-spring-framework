@@ -6,7 +6,9 @@ package com.henry.stu.pojo;
  */
 public class MyTestBean {
 
-  private String name = "Hello bean";
+  private String name;
+
+  private String nickname;
 
   public String getName() {
     return name;
@@ -14,5 +16,22 @@ public class MyTestBean {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getNickname() {
+    return nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+  public MyTestBean(String name) {
+    this.name = name;
+  }
+
+  public MyTestBean(String name, String nickname) {
+    this.name = name;
+    this.nickname = nickname;
   }
 }
