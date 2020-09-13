@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.w3c.dom.Document;
@@ -65,9 +66,13 @@ public class BeanFactoryTest {
     BeanFactory beanFactory = new MyXmlBeanFactory(new ClassPathResource("spring-bean-config.xml"));
     Car car = (Car) beanFactory.getBean("car");
     CarFactoryBean carFactoryBean  = (CarFactoryBean) beanFactory.getBean("&car");
-    System.out.println(car.toString());
-    System.out.println(carFactoryBean.toString());
-    System.out.println(carFactoryBean.getObject());
+    System.out.println("car info:" + car.toString());
+    System.out.println("car factory info:" + carFactoryBean.toString());
+    System.out.println("factory car info:" + carFactoryBean.getObject());
   }
 
+  @Test
+  public void MylTestOfApplication() {
+    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-bean-config.xml");
+  }
 }
