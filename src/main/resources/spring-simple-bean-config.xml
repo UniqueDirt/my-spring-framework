@@ -6,13 +6,11 @@
                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <context:component-scan base-package="com"></context:component-scan>
-
-    <bean id="car" class="com.henry.stu.pojo.car">
+    <bean id="car" class="com.henry.stu.pojo.Car">
         <property name="brand" value="xd"></property>
     </bean>
 
-    <context:mbean-export></context:mbean-export>
+<!--    <context:mbean-export></context:mbean-export>-->
 
 <!--    <test></test>-->
 </beans>

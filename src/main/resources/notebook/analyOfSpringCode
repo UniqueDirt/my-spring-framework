@@ -1,0 +1,7 @@
+1、PluggableSchemaResolve.getSchemaMappings()
+	schemaMappings = this.schemaMappings;
+	q:为什么不直接用this.schemaMappings?
+
+2、AbstractBeanDefinitionReader.loadBeanDefinitions()
+	if (resourceLoader instanceof ResourcePatternResolver)
+	q:这里的resourceLoader应该是ClassPathXmlApplication,没看到哪里实现了ResourcePatternResolver接口。

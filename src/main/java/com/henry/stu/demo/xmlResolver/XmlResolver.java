@@ -1,4 +1,4 @@
-package com.henry.stu.beanmethod;
+package com.henry.stu.demo.xmlResolver;
 
 import org.springframework.core.io.ClassPathResource;
 
