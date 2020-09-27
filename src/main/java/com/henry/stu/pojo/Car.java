@@ -12,6 +12,8 @@ public class Car {
 
   private double price;
 
+  private String name;
+
   public int getMaxSpeed() {
     return maxSpeed;
   }
@@ -34,6 +36,14 @@ public class Car {
 
   public void setPrice(double price) {
     this.price = price;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   @Override
