@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="user" class="com.henry.stu.pojo.User">
+        <property name="id" value="1"></property>
+        <property name="name" value="hy"></property>
+    </bean>
+
+    <bean id="userReposition" class="com.henry.stu.pojo.UserReposition" autowire="byType">
+    </bean>
+
+    <bean id="bwm" class="com.henry.stu.service.impl.Bwm" primary="true">
+        <property name="price" value="38"></property>
+    </bean>
+
+    <bean id="bc" class="com.henry.stu.service.impl.Bc">
+        <property name="price" value="66"></property>
+    </bean>
+
+
+</beans>

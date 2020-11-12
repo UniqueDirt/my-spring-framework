@@ -13,6 +13,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
+/**
+ * @author heyong
+ */
 public class XmlResolver {
 
   public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
@@ -65,6 +68,7 @@ public class XmlResolver {
         return inputSource;
       }
     });
+
 
     Document document = documentBuilder.parse(resource.getInputStream());
 
