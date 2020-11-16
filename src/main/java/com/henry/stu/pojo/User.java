@@ -26,6 +26,13 @@ public class User {
     this.name = name;
   }
 
+  public static User getUser() {
+    User user = new User();
+    user.setId(1);
+    user.setName("通过静态方法实例化Bean");
+    return user;
+  }
+
   @Override
   public String toString() {
     return "User{" +
@@ -33,4 +40,5 @@ public class User {
             ", name='" + name + '\'' +
             '}';
   }
+
 }
