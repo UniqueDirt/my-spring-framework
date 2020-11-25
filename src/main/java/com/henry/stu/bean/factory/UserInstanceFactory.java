@@ -14,4 +14,11 @@ public interface UserInstanceFactory {
     user.setName("通过实例方法实例化Bean");
     return user;
   }
+
+  default User getUserByServiceLoader() {
+    User user = new User();
+    user.setId(4);
+    user.setName("通过ServiceLoader实例化Bean");
+    return user;
+  }
 }

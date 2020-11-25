@@ -5,12 +5,14 @@ import com.henry.stu.bean.factory.UserInstanceFactory;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.ClassUtils;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
  * 非正常方式实例化 Bean
+ * @author heyong
  */
 public class SpecailBeanInstantiationDemo {
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class SpecailBeanInstantiationDemo {
         // 通過application context獲取 AutowireCapableBeanFactory
         AutowireCapableBeanFactory beanFactroy = applicationContext.getAutowireCapableBeanFactory();
 
+        // 通过配置信息获取 ServiceLoader 加载器
         ServiceLoader<UserInstanceFactory> serviceLoader = beanFactroy.getBean("userFactoryServiceLoader", ServiceLoader.class);
 
         demoServiceLoader();
@@ -32,7 +35,7 @@ public class SpecailBeanInstantiationDemo {
     }
 
     public static void demoServiceLoader() {
-        ServiceLoader<UserInstanceFactory> serviceLoader = ServiceLoader.load(UserInstanceFactory.class, Thread.currentThread().getContextClassLoader());
+        ServiceLoader<UserInstanceFactory> serviceLoader = ServiceLoader.load(UserInstanceFactory.class, ClassUtils.getDefaultClassLoader());
         displayServiceLoader(serviceLoader);
     }
 
@@ -40,7 +43,7 @@ public class SpecailBeanInstantiationDemo {
         Iterator<UserInstanceFactory> iterable = serviceLoader.iterator();
         while (iterable.hasNext()) {
             UserInstanceFactory userFactory = iterable.next();
-            System.out.println(userFactory.getUser());
+            System.out.println(userFactory.getUserByServiceLoader());
         }
     }
 }
