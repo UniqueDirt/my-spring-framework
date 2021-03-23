@@ -1,9 +1,9 @@
 package com.henry.stu.factory;
 
 import com.henry.stu.extend.MyXmlBeanFactory;
-import com.henry.stu.pojo.Car;
-import com.henry.stu.pojo.CarFactoryBean;
-import com.henry.stu.pojo.MyTestBean;
+import com.henry.spring.pojo.Car;
+import com.henry.spring.pojo.CarFactoryBean;
+import com.henry.spring.pojo.MyTestBean;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;

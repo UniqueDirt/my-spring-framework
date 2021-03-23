@@ -1,6 +1,6 @@
 package com.henry.stu.reflect;
 
-import com.henry.stu.pojo.Car;
+import com.henry.spring.pojo.Car;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -22,7 +22,7 @@ public class ReflectTest {
     Class class2 = Car.class;
     System.out.println("class1 == class2:" + (class1 == class2));
 
-    Class class3 = Class.forName("com.henry.stu.pojo.Car");
+    Class class3 = Class.forName("com.henry.spring.pojo.Car");
     System.out.println("class2 == class3:" +  (class3 == class2));
 
     Car car2 = new Car();

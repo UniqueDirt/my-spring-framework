@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myTestBean" class="com.henry.stu.pojo.MyTestBean">
+    <bean id="myTestBean" class="com.henry.spring.pojo.MyTestBean">
         <constructor-arg index="0" type="java.lang.String">
             <value>hy</value>
         </constructor-arg>
@@ -12,7 +12,7 @@
         </constructor-arg>
     </bean>
 
-    <bean id="car" class="com.henry.stu.pojo.CarFactoryBean">
+    <bean id="car" class="com.henry.spring.pojo.CarFactoryBean">
         <constructor-arg value="超级跑车,400,2000000"/>
     </bean>
 </beans>

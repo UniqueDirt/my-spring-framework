@@ -6,6 +6,6 @@
                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="userFactoryServiceLoader" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
-        <property name="serviceType" value="com.henry.stu.bean.factory.UserInstanceFactory"></property>
+        <property name="serviceType" value="com.henry.spring.bean.factory.UserInstanceFactory"></property>
     </bean>
 </beans>

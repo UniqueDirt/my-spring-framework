@@ -4,19 +4,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="user" class="com.henry.stu.pojo.User">
+    <bean id="user" class="com.henry.spring.pojo.User">
         <property name="id" value="1"></property>
         <property name="name" value="hy"></property>
     </bean>
 
-    <bean id="userReposition" class="com.henry.stu.pojo.UserReposition" autowire="byType">
+    <bean id="userReposition" class="com.henry.spring.pojo.UserReposition" autowire="byType">
     </bean>
 
-    <bean id="bwm" class="com.henry.stu.service.impl.Bwm" primary="true">
+    <bean id="bwm" class="com.henry.spring.service.impl.Bwm" primary="true">
         <property name="price" value="38"></property>
     </bean>
 
-    <bean id="bc" class="com.henry.stu.service.impl.Bc">
+    <bean id="bc" class="com.henry.spring.service.impl.Bc">
         <property name="price" value="66"></property>
     </bean>
 
