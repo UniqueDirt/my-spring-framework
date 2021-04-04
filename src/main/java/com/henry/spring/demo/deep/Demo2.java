@@ -13,5 +13,13 @@ public class Demo2 {
     FileSystemXmlApplicationContext applicationContext = new FileSystemXmlApplicationContext("classpath:spring-bean-config.xml");
 
     System.out.println(applicationContext.getBean("myTestBean").toString());
+
+    ((DemoService) applicationContext.getBean("demoService")).eat();
+
+    System.out.println(applicationContext.getBean("car"));
+
+    System.out.println(applicationContext.getBean("&car"));
+
+
   }
 }

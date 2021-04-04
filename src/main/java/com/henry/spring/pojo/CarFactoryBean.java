@@ -10,6 +10,7 @@ public class CarFactoryBean implements FactoryBean<Car> {
 
   private String carInfo;
 
+  @Override
   public Car getObject() throws Exception {
     Car car = new Car();
     String[] info = carInfo.split(",");
@@ -19,10 +20,12 @@ public class CarFactoryBean implements FactoryBean<Car> {
     return car;
   }
 
+  @Override
   public boolean isSingleton() {
     return false;
   }
 
+  @Override
   public Class<?> getObjectType() {
     return Car.class;
   }

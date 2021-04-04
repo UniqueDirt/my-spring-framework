@@ -10,6 +10,8 @@ public class MyTestBean {
 
   private String nickname;
 
+  private User user;
+
   public String getName() {
     return name;
   }
@@ -26,8 +28,16 @@ public class MyTestBean {
     this.nickname = nickname;
   }
 
-  public MyTestBean(String name) {
-    this.name = name;
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public MyTestBean() {
+
   }
 
   public MyTestBean(String name, String nickname) {
@@ -40,6 +50,7 @@ public class MyTestBean {
     return "MyTestBean{" +
             "name='" + name + '\'' +
             ", nickname='" + nickname + '\'' +
+            ", user=" + user +
             '}';
   }
 }

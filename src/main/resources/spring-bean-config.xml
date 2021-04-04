@@ -3,16 +3,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="myTestBean" class="com.henry.spring.pojo.MyTestBean">
-        <constructor-arg index="0" type="java.lang.String">
-            <value>hy</value>
-        </constructor-arg>
-        <constructor-arg index="1" type="java.lang.String">
-            <value>henry</value>
-        </constructor-arg>
+    <bean name="myTestBean" class="com.henry.spring.pojo.MyTestBean">
+        <property name="name" value="hy"></property>
+        <property name="user" ref="user1"></property>
+    </bean>
+
+    <bean name="user1" class="com.henry.spring.pojo.User">
+        <property name="id" value="1"></property>
+        <property name="name" value="hy"></property>
     </bean>
 
     <bean id="car" class="com.henry.spring.pojo.CarFactoryBean">
         <constructor-arg value="超级跑车,400,2000000"/>
     </bean>
+
+    <bean id="demoService" class="com.henry.spring.demo.deep.DemoService"></bean>
+
+
 </beans>
