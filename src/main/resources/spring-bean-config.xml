@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
 
     <bean name="myTestBean" class="com.henry.spring.pojo.MyTestBean">
         <property name="name" value="hy"></property>
@@ -17,7 +25,21 @@
         <constructor-arg value="超级跑车,400,2000000"/>
     </bean>
 
-    <bean id="demoService" class="com.henry.spring.demo.deep.DemoService"></bean>
+    <bean id="demoService" class="com.henry.spring.demo.deep.DemoServiceImpl"></bean>
 
+    <bean id="demoAspect" class="com.henry.spring.demo.deep.DemoAspect"></bean>
+
+    <aop:config>
+        <aop:aspect ref="demoAspect">
+            <!-- 配置一个切点 -->
+            <aop:pointcut id="simplePointcut" expression="execution(* com.henry.spring.demo.deep.DemoService..*(..))"/>
+
+            <aop:before pointcut-ref="simplePointcut" method="before"/>
+            <aop:after pointcut-ref="simplePointcut" method="after"/>
+        </aop:aspect>
+    </aop:config>
+    <aop:aspectj-autoproxy  proxy-target-class="true"/>
+
+    <bean id="MyBeanPostProcessor" class="com.henry.spring.demo.deep.MyBeanPostProcessor"></bean>
 
 </beans>
